@@ -26,7 +26,7 @@ class doaTidurDone : AppCompatActivity() {
         var jawaban = intent.getStringExtra(doaTidurDone.JAWABAN)
 
         var soalarr= soal?.split(" ")
-        var jwbarr=jawaban?.split(" ")
+        var jwbarr = jawaban.split(" ")
         println(soalarr)
         println(jwbarr)
         var jmlstr = 0
@@ -38,44 +38,127 @@ class doaTidurDone : AppCompatActivity() {
             }
         }
         println(jmlstr)
-        if (jawaban != null) {
-            for (i in jawaban){
-                print(i)
-            }
-        }
-        println(jmlstr)
+        var filterjwbarr :List<String> = arrayListOf("")
         if (jwbarr != null) {
-            for (j in jwbarr){
+            var index = 1
+            for (j in jwbarr) {
                 if (soalarr != null) {
-                    for (i in soalarr){
-                        if (j == i){
-                            var word = "<font color=#FF641A>"+i+"</font>"
-                            jmlslh = jmlslh+1
-                            hasil_hafalan = hasil_hafalan+word
-                        } else{
-                            var word = "<font color=#2aad46>"+i+"</font>"
-                            hasil_hafalan = hasil_hafalan+word
-                        }
+                    if (j in soalarr) {
+                        println("keterangan kata " + j + " ada di doa mau tidur")
 
+                    } else {
+                        print(jwbarr.indexOf(j))
+                        jwbarr = remove(jwbarr, jwbarr.indexOf(j))
+                        println("keterangan kata " + j + " tidak ada di doa mau tidur")
                     }
                 }
-
+                index = index + 1
             }
         }
+        var ketemu = 0
+        println(jwbarr)
+            if (jwbarr != null) {
+                for (j in jwbarr){
+                    if (soalarr != null) {
+                        if(ketemu != 0 ) {
+                            var index = 1
+                            for (i in soalarr) {
+                                println(i)
+                                if (index > ketemu) {
+                                    if (j == i) {
+                                        var word = "<font color=#FF641A>" + i + "</font>"
+                                        jmlslh = jmlslh + 1
+                                        hasil_hafalan = hasil_hafalan + word + " "
+                                        println(soalarr[index-1])
+                                        println(i)
+                                        println(index)
+                                        println(jwbarr.last())
+                                        println(soalarr.last())
+                                        ketemu = index
+                                        if (i == jwbarr.last()){
+
+                                        }
+                                        else {
+                                            break
+                                        }
+                                    } else {
+                                        var word = "<font color=#2aad46>" + i + "</font>"
+                                        hasil_hafalan = hasil_hafalan + word + " "
+                                    }
+                                }
+                                index = index + 1
+                            }
+
+                        }
+                        else{
+                            var index = 1
+                            for (i in soalarr) {
+                                if (j == i) {
+                                    var word = "<font color=#FF641A>" + i + "</font>"
+                                    jmlslh = jmlslh + 1
+                                    hasil_hafalan = hasil_hafalan + word + " "
+                                    println(soalarr[index])
+                                    println(index)
+                                    ketemu = index
+                                    if (i == jwbarr.last()){
+
+                                    }
+                                    else {
+                                        break
+                                    }
+                                } else {
+                                    var word = "<font color=#2aad46>" + i + "</font>"
+                                    hasil_hafalan = hasil_hafalan + word + " "
+                                }
+                                index = index + 1
+                            }
+
+                        }
+                    }
+
+                }
+            }
+            else{
+                if (soalarr != null) {
+                    for (i in soalarr) {
+                        var word = "<font color=#2aad46>" + i + "</font>"
+                        hasil_hafalan = hasil_hafalan + word + " "
+                    }
+                }
+            }
+
+
 
         val jmlbnr = jmlstr - jmlslh
-        val score = jmlbnr * (100 / jmlstr)
+        var score = 0
+        if (hasil == "Salah"){
+            score = jmlbnr * (100 / jmlstr)
+            binding.hasil.setTextColor(Color.parseColor("#FF0000"))
+        }
+        else {
+            score = 100
+        }
         binding.hasil.text = hasil.toString()
         binding.soal.text =  Html.fromHtml(hasil_hafalan)
-        binding.jawaban.text = "score : \n"+score+"%"
-
-        if (binding.hasil.text == "Salah"){
-            binding.jawaban.setTextColor(Color.parseColor("#FF0000"))
+        if (score<=50){
+            var scoretext = "Score : <br> "+"<font color=#FF0000>" + score + " % </font>"
+            binding.jawaban.text = Html.fromHtml(scoretext)
         }
-
-
+        else{
+            var scoretext = "Score : <br> "+"<font color=#2aad46>" + score + " % </font>"
+            binding.jawaban.text = Html.fromHtml(scoretext)
+        }
         binding.btnSelesai.setOnClickListener {
             finish()
         }
+    }
+    fun remove(arr: List<String>, index:Int):List<String>{
+        if (index <0 || index >= arr.size){
+            return arr
+        }
+
+        val result = arr.toMutableList()
+        result.removeAt(index)
+        return result.toList<String>()
     }
 }
