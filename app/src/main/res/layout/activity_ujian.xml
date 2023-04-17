@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    tools:context=".ui.ujian.Ujian">
+
+    <ImageView
+        android:id="@+id/bg_top"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bg_top" />
+
+    <TextView
+        android:id="@+id/label_title_app"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ujian Hafalan"
+        android:textColor="@color/green_500"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_title_app"
+        app:layout_constraintVertical_bias="1.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_doa_mengawali_pekerjaan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:text="Doa Mengawali Pekerjaan"
+                android:textAllCaps="false"
+                android:textColor="@color/green_500"
+                android:textStyle="bold"
+                app:backgroundTint="@color/gray"
+                app:cornerRadius="10dp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_doa_mengakhiri_pekerjaan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:text="Doa Mengakhiri Pekerjaan"
+                android:textAllCaps="false"
+                android:textColor="@color/green_500"
+                android:textStyle="bold"
+                app:backgroundTint="@color/gray"
+                app:cornerRadius="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/btn_doa_mengawali_pekerjaan" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_doa_mau_makan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:text="Doa Mau Makan"
+                android:textAllCaps="false"
+                android:textColor="@color/green_500"
+                android:textStyle="bold"
+                app:backgroundTint="@color/gray"
+                app:cornerRadius="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/btn_doa_mengakhiri_pekerjaan"
+                tools:layout_editor_absoluteX="10dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_doa_sesudah_makan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:text="Doa Sesudah Makan"
+                android:textAllCaps="false"
+                android:textColor="@color/green_500"
+                android:textStyle="bold"
+                app:backgroundTint="@color/gray"
+                app:cornerRadius="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/btn_doa_mau_makan"
+                tools:layout_editor_absoluteX="10dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_doa_tidur"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:text="Doa Mau Tidur"
+                android:textAllCaps="false"
+                android:textColor="@color/green_500"
+                android:textStyle="bold"
+                app:backgroundTint="@color/gray"
+                app:cornerRadius="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/btn_doa_sesudah_makan"
+                tools:layout_editor_absoluteX="10dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_doa_sesudah_tidur"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:text="Doa Sesudah Tidur"
+                android:textAllCaps="false"
+                android:textColor="@color/green_500"
+                android:textStyle="bold"
+                app:backgroundTint="@color/gray"
+                app:cornerRadius="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/btn_doa_tidur"
+                tools:layout_editor_absoluteX="10dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_doa_masuk_masjid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:text="Doa Masuk Masjid"
+                android:textAllCaps="false"
+                android:textColor="@color/green_500"
+                android:textStyle="bold"
+                app:backgroundTint="@color/gray"
+                app:cornerRadius="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/btn_doa_sesudah_tidur"
+                tools:layout_editor_absoluteX="10dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_doa_keluar_masjid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:text="Doa Keluar Masjid"
+                android:textAllCaps="false"
+                android:textColor="@color/green_500"
+                android:textStyle="bold"
+                app:backgroundTint="@color/gray"
+                app:cornerRadius="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/btn_doa_masuk_masjid"
+                tools:layout_editor_absoluteX="10dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_doa_melihat_mendung"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:text="Doa Melihat Mendung"
+                android:textAllCaps="false"
+                android:textColor="@color/green_500"
+                android:textStyle="bold"
+                app:backgroundTint="@color/gray"
+                app:cornerRadius="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/btn_doa_keluar_masjid"
+                tools:layout_editor_absoluteX="10dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_doa_melihat_kilat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:text="Doa Melihat Kilat"
+                android:textAllCaps="false"
+                android:textColor="@color/green_500"
+                android:textStyle="bold"
+                app:backgroundTint="@color/gray"
+                app:cornerRadius="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/btn_doa_melihat_mendung"
+                tools:layout_editor_absoluteX="10dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_doa_turun_hujan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:text="Doa Turun Hujan"
+                android:textAllCaps="false"
+                android:textColor="@color/green_500"
+                android:textStyle="bold"
+                app:backgroundTint="@color/gray"
+                app:cornerRadius="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/btn_doa_melihat_kilat"
+                tools:layout_editor_absoluteX="10dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_doa_ketika_hujan_lebat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:text="Doa Ketika Hujan Lebat"
+                android:textAllCaps="false"
+                android:textColor="@color/green_500"
+                android:textStyle="bold"
+                app:backgroundTint="@color/gray"
+                app:cornerRadius="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/btn_doa_turun_hujan"
+                tools:layout_editor_absoluteX="10dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_doa_ketika_hujan_reda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:text="Doa Ketika Hujan Reda"
+                android:textAllCaps="false"
+                android:textColor="@color/green_500"
+                android:textStyle="bold"
+                app:backgroundTint="@color/gray"
+                app:cornerRadius="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/btn_doa_ketika_hujan_lebat"
+                tools:layout_editor_absoluteX="10dp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

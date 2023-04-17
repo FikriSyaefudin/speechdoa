@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ujian.doaTurunHujan.doaTurunHujanStart">
+
+    <ImageView
+        android:id="@+id/bg_top"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/label_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="144dp"
+        android:text="Ujian Hafalan"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/label_nama_surat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:text="Doa Mau Turun Hujan"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/label_peringatan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Tahan Untuk Merekam"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_nama_surat" />
+
+    <ImageView
+        android:id="@+id/iv_base_mic"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:src="@drawable/ic_base_mic"
+        app:tint="@color/light_gray"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_mic"
+        app:layout_constraintEnd_toEndOf="@+id/btn_mic"
+        app:layout_constraintStart_toStartOf="@+id/btn_mic"
+        app:layout_constraintTop_toTopOf="@+id/btn_mic" />
+
+
+    <ImageView
+        android:id="@+id/btn_mic"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/ic_mic"
+        app:layout_constraintEnd_toEndOf="@+id/label_peringatan"
+        app:layout_constraintStart_toStartOf="@+id/label_peringatan"
+        app:layout_constraintTop_toBottomOf="@+id/label_peringatan"
+        app:tint="@color/mic_disabled_color" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
