@@ -21,16 +21,16 @@ class doaTidurDone : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDoaTidurDoneBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val hasil = intent.getStringExtra(doaTidurDone.HASIL)
+        var hasil = ""
         var soal = intent.getStringExtra(doaTidurDone.SOAL)
         var jawaban = intent.getStringExtra(doaTidurDone.JAWABAN)
 
         var soalarr= soal?.split(" ")
-        var jwbarr = jawaban.split(" ")
+        var jwbarr = jawaban!!.split(" ")
         println(soalarr)
         println(jwbarr)
         var jmlstr = 0
-        var jmlslh = 0
+        var jmlbnr = 0
         var hasil_hafalan=""
         if (soalarr != null) {
             for (i in soalarr){
@@ -38,8 +38,7 @@ class doaTidurDone : AppCompatActivity() {
             }
         }
         println(jmlstr)
-        var filterjwbarr :List<String> = arrayListOf("")
-        if (jwbarr != null) {
+        /* if (jwbarr != null) {
             var index = 1
             for (j in jwbarr) {
                 if (soalarr != null) {
@@ -54,7 +53,7 @@ class doaTidurDone : AppCompatActivity() {
                 }
                 index = index + 1
             }
-        }
+        } */
         var ketemu = 0
         println(jwbarr)
             if (jwbarr != null) {
@@ -66,8 +65,8 @@ class doaTidurDone : AppCompatActivity() {
                                 println(i)
                                 if (index > ketemu) {
                                     if (j == i) {
-                                        var word = "<font color=#FF641A>" + i + "</font>"
-                                        jmlslh = jmlslh + 1
+                                        var word = "<font color=#2aad46>" + i + "</font>"
+                                        jmlbnr = jmlbnr + 1
                                         hasil_hafalan = hasil_hafalan + word + " "
                                         println(soalarr[index-1])
                                         println(i)
@@ -82,7 +81,7 @@ class doaTidurDone : AppCompatActivity() {
                                             break
                                         }
                                     } else {
-                                        var word = "<font color=#2aad46>" + i + "</font>"
+                                        var word = "<font color=#FF641A>" + i + "</font>"
                                         hasil_hafalan = hasil_hafalan + word + " "
                                     }
                                 }
@@ -94,8 +93,8 @@ class doaTidurDone : AppCompatActivity() {
                             var index = 1
                             for (i in soalarr) {
                                 if (j == i) {
-                                    var word = "<font color=#FF641A>" + i + "</font>"
-                                    jmlslh = jmlslh + 1
+                                    var word = "<font color=#2aad46>" + i + "</font>"
+                                    jmlbnr = jmlbnr + 1
                                     hasil_hafalan = hasil_hafalan + word + " "
                                     println(soalarr[index])
                                     println(index)
@@ -107,7 +106,7 @@ class doaTidurDone : AppCompatActivity() {
                                         break
                                     }
                                 } else {
-                                    var word = "<font color=#2aad46>" + i + "</font>"
+                                    var word = "<font color=#FF641A>" + i + "</font>"
                                     hasil_hafalan = hasil_hafalan + word + " "
                                 }
                                 index = index + 1
@@ -121,21 +120,30 @@ class doaTidurDone : AppCompatActivity() {
             else{
                 if (soalarr != null) {
                     for (i in soalarr) {
-                        var word = "<font color=#2aad46>" + i + "</font>"
+                        var word = "<font color=#FF641A>" + i + "</font>"
                         hasil_hafalan = hasil_hafalan + word + " "
                     }
                 }
             }
 
-
-
-        val jmlbnr = jmlstr - jmlslh
+        val jmlslh = jmlstr - jmlbnr
         var score = 0
+        if (jmlbnr == 0) {
+            hasil = "Salah"
+        }
+        else if(jmlbnr == jmlstr){
+            hasil = "Benar"
+        }
+        else{
+            hasil = "Salah"
+        }
         if (hasil == "Salah"){
             score = jmlbnr * (100 / jmlstr)
             binding.hasil.setTextColor(Color.parseColor("#FF0000"))
         }
         else {
+            binding.hasil.setTextColor(Color.parseColor("#2aad46"))
+            binding.jawaban.setTextColor(Color.parseColor("#2aad46"))
             score = 100
         }
         binding.hasil.text = hasil.toString()
