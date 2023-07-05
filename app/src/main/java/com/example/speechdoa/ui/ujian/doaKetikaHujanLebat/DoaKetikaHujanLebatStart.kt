@@ -20,7 +20,7 @@ import com.example.speechdoa.databinding.ActivityDoaKetikaHujanLebatStartBinding
 import com.example.speechdoa.ui.ujian.doaKetikaHujanLebat.DoaKetikaHujanLebatDone
 import com.example.speechdoa.ui.ujian.doaKetikaHujanLebat.DoaKetikaHujanLebatModel
 
-class doaKetikaHujanLebatStart : BaseActivity() {
+class DoaKetikaHujanLebatStart : BaseActivity() {
 
     private lateinit var binding: ActivityDoaKetikaHujanLebatStartBinding
     var listDoaKetikaHujanLebat = ArrayList<DoaKetikaHujanLebatEntity>()

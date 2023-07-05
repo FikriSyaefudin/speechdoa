@@ -15,19 +15,19 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import com.example.speechdoa.R
 import com.example.speechdoa.data.DoaMengawaliPekerjaanEntity
-import com.example.speechdoa.databinding.ActivityDoaSesudahMakanStartBinding
+import com.example.speechdoa.databinding.ActivityDoaMengawaliPekerjaanStartBinding
 import com.example.speechdoa.ui.ujian.doaMengawaliPekerjaan.DoaMengawaliPekerjaanDone
 import com.example.speechdoa.ui.ujian.doaMengawaliPekerjaan.DoaMengawaliPekerjaanModel
 
 class DoaMengawaliPekerjaanStart : AppCompatActivity() {
-    private lateinit var binding: ActivityDoaSesudahMakanStartBinding
+    private lateinit var binding: ActivityDoaMengawaliPekerjaanStartBinding
     var listDoaMengawaliPekerjaan = ArrayList<DoaMengawaliPekerjaanEntity>()
 
     var current_position = 0
     var hasil = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityDoaSesudahMakanStartBinding.inflate(layoutInflater)
+        binding = ActivityDoaMengawaliPekerjaanStartBinding.inflate(layoutInflater)
         setContentView(binding.root)
         println(this::binding.isInitialized)
 

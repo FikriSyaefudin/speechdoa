@@ -7,6 +7,7 @@ import android.widget.Button
 import com.example.speechdoa.R
 import com.example.speechdoa.base.BaseActivity
 import com.example.speechdoa.databinding.ActivityMainBinding
+import com.example.speechdoa.ui.about.About
 import com.example.speechdoa.ui.ujian.Ujian
 import com.example.speechdoa.ui.belajar.Belajar
 
@@ -24,6 +25,10 @@ class MainActivity : BaseActivity() {
 
         binding.btnHafalan.setOnClickListener {
             val intent = Intent(Intent(applicationContext, Ujian::class.java))
+            startActivity(intent)
+        }
+        binding.btnAbout.setOnClickListener {
+            val intent = Intent(Intent(applicationContext, About::class.java))
             startActivity(intent)
         }
     }

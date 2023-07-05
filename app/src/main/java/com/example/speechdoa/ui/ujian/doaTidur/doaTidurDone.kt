@@ -24,149 +24,122 @@ class doaTidurDone : AppCompatActivity() {
         var hasil = ""
         var soal = intent.getStringExtra(doaTidurDone.SOAL)
         var jawaban = intent.getStringExtra(doaTidurDone.JAWABAN)
-
-        var soalarr= soal?.split(" ")
+        var soalarr = soal!!.split(" ")
         var jwbarr = jawaban!!.split(" ")
         println(soalarr)
         println(jwbarr)
-        var jmlstr = 0
         var jmlbnr = 0
-        var hasil_hafalan=""
-        if (soalarr != null) {
-            for (i in soalarr){
-                jmlstr = jmlstr+1
-            }
-        }
+        var hasil_hafalan = ""
+        var jmlstr = soal?.length ?: 0
+        var jmljwb = jawaban?.length ?: 0
+
+
         println(jmlstr)
-        /* if (jwbarr != null) {
-            var index = 1
-            for (j in jwbarr) {
-                if (soalarr != null) {
-                    if (j in soalarr) {
-                        println("keterangan kata " + j + " ada di doa mau tidur")
+        println(jmljwb)
 
-                    } else {
-                        print(jwbarr.indexOf(j))
-                        jwbarr = remove(jwbarr, jwbarr.indexOf(j))
-                        println("keterangan kata " + j + " tidak ada di doa mau tidur")
-                    }
-                }
-                index = index + 1
-            }
-        } */
-        var ketemu = 0
-        println(jwbarr)
-            if (jwbarr != null) {
-                for (j in jwbarr){
-                    if (soalarr != null) {
-                        if(ketemu != 0 ) {
-                            var index = 1
-                            for (i in soalarr) {
-                                println(i)
-                                if (index > ketemu) {
-                                    if (j == i) {
-                                        var word = "<font color=#2aad46>" + i + "</font>"
-                                        jmlbnr = jmlbnr + 1
-                                        hasil_hafalan = hasil_hafalan + word + " "
-                                        println(soalarr[index-1])
-                                        println(i)
-                                        println(index)
-                                        println(jwbarr.last())
-                                        println(soalarr.last())
-                                        ketemu = index
-                                        if (i == jwbarr.last()){
-
-                                        }
-                                        else {
-                                            break
-                                        }
-                                    } else {
-                                        var word = "<font color=#FF641A>" + i + "</font>"
-                                        hasil_hafalan = hasil_hafalan + word + " "
-                                    }
-                                }
-                                index = index + 1
-                            }
-
-                        }
-                        else{
-                            var index = 1
-                            for (i in soalarr) {
-                                if (j == i) {
-                                    var word = "<font color=#2aad46>" + i + "</font>"
-                                    jmlbnr = jmlbnr + 1
-                                    hasil_hafalan = hasil_hafalan + word + " "
-                                    println(soalarr[index])
-                                    println(index)
-                                    ketemu = index
-                                    if (i == jwbarr.last()){
-
-                                    }
-                                    else {
-                                        break
-                                    }
-                                } else {
-                                    var word = "<font color=#FF641A>" + i + "</font>"
-                                    hasil_hafalan = hasil_hafalan + word + " "
-                                }
-                                index = index + 1
-                            }
-
-                        }
-                    }
-
-                }
-            }
-            else{
-                if (soalarr != null) {
-                    for (i in soalarr) {
-                        var word = "<font color=#FF641A>" + i + "</font>"
-                        hasil_hafalan = hasil_hafalan + word + " "
-                    }
-                }
-            }
-
-        val jmlslh = jmlstr - jmlbnr
-        var score = 0
-        if (jmlbnr == 0) {
-            hasil = "Salah"
-        }
-        else if(jmlbnr == jmlstr){
-            hasil = "Benar"
-        }
-        else{
-            hasil = "Salah"
-        }
-        if (hasil == "Salah"){
-            score = jmlbnr * (100 / jmlstr)
-            binding.hasil.setTextColor(Color.parseColor("#FF0000"))
+        var word = ""
+        var letter =""
+        //cek apakah pasti benar
+        if (soal == jawaban){
+            jmlbnr= jmlstr!!
+            word = "<font color=#2aad46> $jawaban </font>"
+            hasil_hafalan += "$word "
         }
         else {
+            // cek kata
+            soalarr.forEachIndexed { indexkata, kata ->
+                if (indexkata <= jwbarr.size - 1) {
+                    if (jwbarr[indexkata] == soalarr[indexkata]) {
+                        println("1 kata jawaban $kata index $indexkata ketemu di kata soal $kata index $indexkata ")
+                        word = "<font color=#2aad46> $kata </font>"
+                        hasil_hafalan += "$word "
+                        //per huruf
+                        for(i in kata )jmlbnr++
+                        //per kata
+                        //jmlbnr++
+
+                    } else {
+                        println("2 kata jawaban " + jwbarr[indexkata] + " index $indexkata tidak ketemu di kata soal $kata index $indexkata ")
+
+                        // per huruf
+                        // cek huruf
+
+                            val jwbhrf = jwbarr[indexkata].toList()
+                            val soalhrf = soalarr[indexkata].toList()
+
+                            word = ""
+                            soalhrf.forEachIndexed { indexhrf, hrf ->
+                            if (indexhrf <= jwbhrf.size - 1) {
+                                if (jwbhrf[indexhrf] == soalhrf[indexhrf]) {
+                                    println("1 huruf jawaban $hrf index $indexhrf ketemu di kata soal $hrf index $indexhrf ")
+                                    letter =
+                                        "<font color=#2aad46>" + hrf + "</font>"
+                                    word += "$letter"
+                                    jmlbnr++
+
+                                } else {
+                                    println("2 huruf jawaban " + jwbhrf[indexhrf] + " index $indexhrf tidak ketemu di kata soal $hrf index $indexhrf ")
+                                    letter = "<font color=#FF641A>" + hrf + "</font>"
+                                    word += "$letter"
+                                }
+                            } else {
+                                println("3 huruf jawaban tidak ada index tidak ada maka tidak ketemu di kata soal $hrf index $indexhrf ")
+                                letter = "<font color=#FF641A>" + hrf + "</font>"
+                                word += "$letter"
+                            }
+
+                        }
+
+                        // end cek huruf
+                        hasil_hafalan += "$word "
+
+
+                        //per kata
+                        //word = "<font color=#FF641A> $kata </font>"
+                        //hasil_hafalan += "$word "
+                    }
+                } else {
+                    println("3 huruf jawaban tidak ada index tidak ada maka tidak ketemu di kata soal $kata index $indexkata ")
+                    word = "<font color=#FF641A> $kata </font>"
+                    hasil_hafalan += "$word "
+                }
+
+            }
+        }
+        // end cek kata
+        println(hasil_hafalan)
+
+        var score = 0
+        val jmlslh = jmlstr?.minus(jmlbnr)
+
+        hasil = when {
+            jmlbnr == 0 -> "Salah"
+            jmlbnr == jmlstr -> "Benar"
+            else -> "Salah"
+        }
+        println(hasil_hafalan)
+        println(jmlbnr)
+        println(jmlslh)
+        if (hasil == "Salah") {
+            var persentase = (jmlbnr.toDouble() / jmlstr!!.toDouble()) * 100.0
+            score = persentase.toInt()
+            binding.hasil.setTextColor(Color.parseColor("#FF0000"))
+        } else {
             binding.hasil.setTextColor(Color.parseColor("#2aad46"))
             binding.jawaban.setTextColor(Color.parseColor("#2aad46"))
             score = 100
         }
-        binding.hasil.text = hasil.toString()
-        binding.soal.text =  Html.fromHtml(hasil_hafalan)
-        if (score<=50){
-            var scoretext = "Score : <br> "+"<font color=#FF0000>" + score + " % </font>"
-            binding.jawaban.text = Html.fromHtml(scoretext)
-        }
-        else{
-            var scoretext = "Score : <br> "+"<font color=#2aad46>" + score + " % </font>"
-            binding.jawaban.text = Html.fromHtml(scoretext)
-        }
-        binding.btnSelesai.setOnClickListener {
-            finish()
-        }
-    }
-    fun remove(arr: List<String>, index:Int):List<String>{
-        if (index <0 || index >= arr.size){
-            return arr
-        }
+        println(score)
 
-        val result = arr.toMutableList()
-        result.removeAt(index)
-        return result.toList<String>()
+        val scoretext = "Score : <br> ${if (score <= 50) "<font color=#FF0000>$score % </font>" else "<font color=#2aad46>$score % </font>"}"
+
+        binding.hasil.text = hasil
+        binding.soal.text = Html.fromHtml(hasil_hafalan)
+        binding.jawaban.text = Html.fromHtml(scoretext)
+        println(jmlbnr)
+        println(hasil)
+        println(score)
+        binding.btnSelesai.setOnClickListener { finish() }
+
     }
 }

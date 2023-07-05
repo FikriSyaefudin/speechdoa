@@ -13,7 +13,7 @@ import com.example.speechdoa.ui.ujian.doaSesudahTidur.DoaSesudahTidurStart
 import com.example.speechdoa.ui.ujian.doaTidur.doaTidurStart
 import com.example.speechdoa.ui.ujian.doaMasukMasjid.DoaMasukMasjidStart
 import com.example.speechdoa.ui.ujian.doaKeluarMasjid.DoaKeluarMasjidStart
-import com.example.speechdoa.ui.ujian.doaKetikaHujanLebat.doaKetikaHujanLebatStart
+import com.example.speechdoa.ui.ujian.doaKetikaHujanLebat.DoaKetikaHujanLebatStart
 import com.example.speechdoa.ui.ujian.doaKetikaHujanReda.doaKetikaHujanRedaStart
 import com.example.speechdoa.ui.ujian.doaMelihatKilat.DoaMelihatKilatStart
 import com.example.speechdoa.ui.ujian.doaMelihatMendung.DoaMelihatMendungStart
@@ -95,7 +95,7 @@ class Ujian : AppCompatActivity() {
 
         val button_doa_ketika_hujan_lebat = findViewById<Button>(R.id.btn_doa_ketika_hujan_lebat)
         button_doa_ketika_hujan_lebat.setOnClickListener {
-            val intent = Intent(this, doaKetikaHujanLebatStart::class.java)
+            val intent = Intent(this, DoaKetikaHujanLebatStart::class.java)
             startActivity(intent)
         }
 
