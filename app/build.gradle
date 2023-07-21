@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.speechdoa'
+    namespace 'com.ndonga.speechdoa'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.speechdoa"
+        applicationId "com.ndonga.speechdoa"
         minSdk 21
         targetSdk 32
         versionCode 1

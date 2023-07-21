@@ -197,7 +197,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".ui.ujian.doaKetikaHujanLebat.doaKetikaHujanLebatStart"
+            android:name=".ui.ujian.doaKetikaHujanLebat.DoaKetikaHujanLebatStart"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
