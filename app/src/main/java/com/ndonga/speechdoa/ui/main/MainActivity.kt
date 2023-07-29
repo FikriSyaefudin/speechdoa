@@ -7,6 +7,7 @@ import com.ndonga.speechdoa.databinding.ActivityMainBinding
 import com.ndonga.speechdoa.ui.about.About
 import com.ndonga.speechdoa.ui.ujian.Ujian
 import com.ndonga.speechdoa.ui.belajar.Belajar
+import com.ndonga.speechdoa.ui.praktik.Praktik
 
 class MainActivity : BaseActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -28,5 +29,6 @@ class MainActivity : BaseActivity() {
             val intent = Intent(Intent(applicationContext, About::class.java))
             startActivity(intent)
         }
+
     }
 }

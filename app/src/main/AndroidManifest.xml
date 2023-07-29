@@ -204,6 +204,7 @@
                 android:value="" />
         </activity>
 
+
         <activity
             android:name=".ui.ujian.doaKetikaHujanReda.DoaKetikaHujanRedaDone"
             android:exported="false">
@@ -233,6 +234,8 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+
         <activity
             android:name=".ui.splash.SplashScreen"
             android:exported="true">

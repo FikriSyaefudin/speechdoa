@@ -105,10 +105,12 @@ class Ujian : AppCompatActivity() {
             startActivity(intent)
         }
 
+
         val button_back = findViewById<ImageView>(R.id.btn_back)
         button_back.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
+
     }
 }
