@@ -1,9 +1,10 @@
-package com.ndonga.speechdoa.ui.ujian.doaKetikaHujanReda
+package com.ndonga.speechdoa.ui.ujian.doaKeluarRumah
 
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
 import android.speech.RecognitionListener
@@ -13,29 +14,26 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import com.ndonga.speechdoa.R
-import com.ndonga.speechdoa.base.BaseActivity
-import com.ndonga.speechdoa.data.DoaKetikaHujanRedaEntity
-import com.ndonga.speechdoa.databinding.ActivityDoaKetikaHujanRedaStartBinding
+import com.ndonga.speechdoa.data.DoaKeluarRumahEntity
+import com.ndonga.speechdoa.databinding.ActivityDoaKeluarRumahStartBinding
 
-class DoaKetikaHujanRedaStart : BaseActivity() {
-
-    private lateinit var binding: ActivityDoaKetikaHujanRedaStartBinding
-    var listDoaKetikaHujanReda = ArrayList<DoaKetikaHujanRedaEntity>()
+class DoaKeluarRumahStart : AppCompatActivity() {
+    private lateinit var binding: ActivityDoaKeluarRumahStartBinding
+    var listDoaKeluarRumah = ArrayList<DoaKeluarRumahEntity>()
 
     var current_position = 0
     var hasil = ""
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityDoaKetikaHujanRedaStartBinding.inflate(layoutInflater)
+        binding = ActivityDoaKeluarRumahStartBinding.inflate(layoutInflater)
         setContentView(binding.root)
         println(this::binding.isInitialized)
 
         val viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(
-            DoaKetikaHujanRedaModel::class.java)
-        val doaKetikaHujanReda = viewModel.getDoaKetikaHujanReda()
+            DoaKeluarRumahModel::class.java)
+        val doaKeluarRumah = viewModel.getDoaKeluarRumah()
 
-        listDoaKetikaHujanReda.addAll(doaKetikaHujanReda)
+        listDoaKeluarRumah.addAll(doaKeluarRumah)
 
         binding.btnMic.setOnClickListener {
             checkAudioPermission()
@@ -82,36 +80,36 @@ class DoaKetikaHujanRedaStart : BaseActivity() {
                 val result = bundle.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
                 if (result != null) {
                     println(result[0])
-                    if (current_position < listDoaKetikaHujanReda.size - 1) {
-                        if (result[0] == listDoaKetikaHujanReda[current_position].doa) {
+                    if (current_position < listDoaKeluarRumah.size - 1) {
+                        if (result[0] == listDoaKeluarRumah[current_position].doa) {
                             println(result[0])
                             current_position++
                             hasil = "Benar"
                             Toast.makeText(applicationContext, "Benar", Toast.LENGTH_SHORT).show()
                         } else {
-                            current_position++
                             hasil = "Salah"
+                            current_position++
                             Toast.makeText(applicationContext, "Kurang Tepat", Toast.LENGTH_SHORT)
                                 .show()
                         }
-                    } else if (result[0] == listDoaKetikaHujanReda[current_position].doa) {
+                    } else if (result[0] == listDoaKeluarRumah[current_position].doa) {
                         println(result[0])
                         hasil = "Benar"
                         Toast.makeText(applicationContext, "Benar", Toast.LENGTH_SHORT).show()
-                        val intent = Intent(applicationContext, DoaKetikaHujanRedaDone::class.java)
-                        intent.putExtra(DoaKetikaHujanRedaDone.HASIL, hasil)
-                        intent.putExtra(DoaKetikaHujanRedaDone.SOAL, listDoaKetikaHujanReda[current_position].doa)
-                        intent.putExtra(DoaKetikaHujanRedaDone.JAWABAN, result[0])
+                        val intent = Intent(applicationContext, DoaKeluarRumahDone::class.java)
+                        intent.putExtra(DoaKeluarRumahDone.HASIL, hasil)
+                        intent.putExtra(DoaKeluarRumahDone.SOAL, listDoaKeluarRumah[current_position].doa)
+                        intent.putExtra(DoaKeluarRumahDone.JAWABAN, result[0])
                         startActivity(intent)
                         finish()
                     } else {
                         hasil = "Salah"
                         Toast.makeText(applicationContext, "Kurang Tepat", Toast.LENGTH_SHORT)
                             .show()
-                        val intent = Intent(applicationContext, DoaKetikaHujanRedaDone::class.java)
-                        intent.putExtra(DoaKetikaHujanRedaDone.HASIL, hasil)
-                        intent.putExtra(DoaKetikaHujanRedaDone.SOAL, listDoaKetikaHujanReda[current_position].doa)
-                        intent.putExtra(DoaKetikaHujanRedaDone.JAWABAN, result[0])
+                        val intent = Intent(applicationContext, DoaKeluarRumahDone::class.java)
+                        intent.putExtra(DoaKeluarRumahDone.HASIL, hasil)
+                        intent.putExtra(DoaKeluarRumahDone.SOAL, listDoaKeluarRumah[current_position].doa)
+                        intent.putExtra(DoaKeluarRumahDone.JAWABAN, result[0])
                         startActivity(intent)
                         finish()
                     }

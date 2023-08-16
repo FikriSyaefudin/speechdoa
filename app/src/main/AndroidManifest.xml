@@ -213,7 +213,138 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".ui.ujian.doaKetikaHujanReda.doaKetikaHujanRedaStart"
+            android:name=".ui.ujian.doaKetikaHujanReda.DoaKetikaHujanRedaStart"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
+            android:name=".ui.ujian.doaMemakaiPakaian.DoaMemakaiPakaianDone"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ui.ujian.doaMemakaiPakaian.DoaMemakaiPakaianStart"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
+            android:name=".ui.ujian.doaMelepasPakaian.DoaMelepasPakaianDone"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ui.ujian.doaMelepasPakaian.DoaMelepasPakaianStart"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
+            android:name=".ui.ujian.doaBercermin.DoaBercerminDone"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ui.ujian.doaBercermin.DoaBercerminStart"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
+            android:name=".ui.ujian.doaMauBepergian.DoaMauBepergianDone"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ui.ujian.doaMauBepergian.DoaMauBepergianStart"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
+            android:name=".ui.ujian.doaKeluarRumah.DoaKeluarRumahDone"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ui.ujian.doaKeluarRumah.DoaKeluarRumahStart"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ui.ujian.doaNaikKendaraan.DoaNaikKendaraanDone"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ui.ujian.doaNaikKendaraan.DoaNaikKendaraanStart"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ui.ujian.doaSampaiDiRumah.DoaSampaiDiRumahDone"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ui.ujian.doaSampaiDiRumah.DoaSampaiDiRumahStart"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ui.ujian.doaMasukRumah.DoaMasukRumahDone"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ui.ujian.doaMasukRumah.DoaMasukRumahStart"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ui.ujian.doaMauMandi.DoaMauMandiDone"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ui.ujian.doaMauMandi.DoaMauMandiStart"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -233,6 +364,12 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
+        </activity>
+        <activity
+            android:name=".ui.belajar.DetailBelajar"
+            android:exported="true"
+            android:launchMode="singleTop">
+
         </activity>
 
 

@@ -7,18 +7,29 @@ import android.widget.Button
 import android.widget.ImageView
 import com.ndonga.speechdoa.R
 import com.ndonga.speechdoa.ui.main.MainActivity
+import com.ndonga.speechdoa.ui.ujian.doaBercermin.DoaBercerminStart
+import com.ndonga.speechdoa.ui.ujian.doaKeluarKamarMandi.DoaKeluarKamarMandiStart
 import com.ndonga.speechdoa.ui.ujian.doaMauMakan.DoaMauMakanStart
 import com.ndonga.speechdoa.ui.ujian.doaSesudahMakan.DoaSesudahMakanStart
 import com.ndonga.speechdoa.ui.ujian.doaSesudahTidur.DoaSesudahTidurStart
 import com.ndonga.speechdoa.ui.ujian.doaTidur.doaTidurStart
 import com.ndonga.speechdoa.ui.ujian.doaMasukMasjid.DoaMasukMasjidStart
 import com.ndonga.speechdoa.ui.ujian.doaKeluarMasjid.DoaKeluarMasjidStart
+import com.ndonga.speechdoa.ui.ujian.doaKeluarRumah.DoaKeluarRumahStart
 import com.ndonga.speechdoa.ui.ujian.doaKetikaHujanLebat.DoaKetikaHujanLebatStart
-import com.ndonga.speechdoa.ui.ujian.doaKetikaHujanReda.doaKetikaHujanRedaStart
+import com.ndonga.speechdoa.ui.ujian.doaKetikaHujanReda.DoaKetikaHujanRedaStart
+import com.ndonga.speechdoa.ui.ujian.doaMasukKamarMandi.DoaMasukKamarmandiStart
+import com.ndonga.speechdoa.ui.ujian.doaMasukRumah.DoaMasukRumahStart
+import com.ndonga.speechdoa.ui.ujian.doaMauBepergian.DoaMauBepergianStart
+import com.ndonga.speechdoa.ui.ujian.doaMauMandi.DoaMauMandiStart
+import com.ndonga.speechdoa.ui.ujian.doaMelepasPakaian.DoaMelepasPakaianStart
 import com.ndonga.speechdoa.ui.ujian.doaMelihatKilat.DoaMelihatKilatStart
 import com.ndonga.speechdoa.ui.ujian.doaMelihatMendung.DoaMelihatMendungStart
+import com.ndonga.speechdoa.ui.ujian.doaMemakaiPakaian.DoaMemakaiPakaianStart
 import com.ndonga.speechdoa.ui.ujian.doaMengakhiriPekerjaan.DoaMengakhiriPekerjaanStart
 import com.ndonga.speechdoa.ui.ujian.doaMengawaliPekerjaan.DoaMengawaliPekerjaanStart
+import com.ndonga.speechdoa.ui.ujian.doaNaikKendaraan.DoaNaikKendaraanStart
+import com.ndonga.speechdoa.ui.ujian.doaSampaiDiRumah.DoaSampaiDiRumahStart
 import com.ndonga.speechdoa.ui.ujian.doaTurunHujan.doaTurunHujanStart
 
 class Ujian : AppCompatActivity() {
@@ -101,10 +112,64 @@ class Ujian : AppCompatActivity() {
 
         val button_doa_ketika_hujan_reda = findViewById<Button>(R.id.btn_doa_ketika_hujan_reda)
         button_doa_ketika_hujan_reda.setOnClickListener {
-            val intent = Intent(this, doaKetikaHujanRedaStart::class.java)
+            val intent = Intent(this, DoaKetikaHujanRedaStart::class.java)
             startActivity(intent)
         }
-
+        val button_doa_memakai_pakaian = findViewById<Button>(R.id.btn_doa_memakai_pakaian)
+        button_doa_memakai_pakaian.setOnClickListener {
+            val intent = Intent(this, DoaMemakaiPakaianStart::class.java)
+            startActivity(intent)
+        }
+        val button_doa_melepas_pakaian = findViewById<Button>(R.id.btn_doa_melepas_pakaian)
+        button_doa_melepas_pakaian.setOnClickListener {
+            val intent = Intent(this, DoaMelepasPakaianStart::class.java)
+            startActivity(intent)
+        }
+        val button_doa_bercermin = findViewById<Button>(R.id.btn_doa_bercermin)
+        button_doa_bercermin.setOnClickListener {
+            val intent = Intent(this, DoaBercerminStart::class.java)
+            startActivity(intent)
+        }
+        val button_doa_mau_bepergian = findViewById<Button>(R.id.btn_doa_mau_bepergian)
+        button_doa_mau_bepergian.setOnClickListener {
+            val intent = Intent(this, DoaMauBepergianStart::class.java)
+            startActivity(intent)
+        }
+        val button_doa_keluar_rumah = findViewById<Button>(R.id.btn_doa_keluar_rumah)
+        button_doa_keluar_rumah.setOnClickListener {
+            val intent = Intent(this, DoaKeluarRumahStart::class.java)
+            startActivity(intent)
+        }
+        val button_doa_naik_kedaraan = findViewById<Button>(R.id.btn_doa_naik_kendaraan)
+        button_doa_naik_kedaraan.setOnClickListener {
+            val intent = Intent(this, DoaNaikKendaraanStart::class.java)
+            startActivity(intent)
+        }
+        val button_doa_sampai_di_rumah = findViewById<Button>(R.id.btn_doa_sampai_di_rumah)
+        button_doa_sampai_di_rumah.setOnClickListener {
+            val intent = Intent(this, DoaSampaiDiRumahStart::class.java)
+            startActivity(intent)
+        }
+        val button_doa_masuk_rumah = findViewById<Button>(R.id.btn_doa_masuk_rumah)
+        button_doa_masuk_rumah.setOnClickListener {
+            val intent = Intent(this, DoaMasukRumahStart::class.java)
+            startActivity(intent)
+        }
+        val button_doa_masuk_kamar_mandi = findViewById<Button>(R.id.btn_doa_masuk_kamar_mandi)
+        button_doa_masuk_kamar_mandi.setOnClickListener {
+            val intent = Intent(this, DoaMasukKamarmandiStart::class.java)
+            startActivity(intent)
+        }
+        val button_doa_keluar_kamar_mandi = findViewById<Button>(R.id.btn_doa_keluar_kamar_mandi)
+        button_doa_keluar_kamar_mandi.setOnClickListener {
+            val intent = Intent(this, DoaKeluarKamarMandiStart::class.java)
+            startActivity(intent)
+        }
+        val button_doa_mau_mandi = findViewById<Button>(R.id.btn_doa_mau_mandi)
+        button_doa_mau_mandi.setOnClickListener {
+            val intent = Intent(this, DoaMauMandiStart::class.java)
+            startActivity(intent)
+        }
 
         val button_back = findViewById<ImageView>(R.id.btn_back)
         button_back.setOnClickListener{
